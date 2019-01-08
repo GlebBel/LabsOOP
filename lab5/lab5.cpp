@@ -33,10 +33,13 @@ vector<string> split(string s){
     for(int i = 0;i<s.length();i++){
         if(s[i]==' '){
             words.push_back(word);
-             word = "";
+            word = "";
         }
-        else if(s[i]=='.')
-            continue;
+        else if(s[i]=='.'){
+            words.push_back(word);
+            word = "";
+            i++;
+        }
         else
             word+=s[i];
     }
